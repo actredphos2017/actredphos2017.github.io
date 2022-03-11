@@ -28,9 +28,16 @@ Git是一个强大的代码版本管理系统，当新建项目仓库之后对�
 
 ```sh
 #常用命令列表
+
+#加入
 git add <文件目录>    #将选中文件加入暂存区
 git add -A    #将仓库中所有修改过的文件加入暂存区
 
+#配置个人信息
+git config --global user.email <邮箱>
+git config --global user.name <昵称>
+
+#提交(首次提交前会提示你配置个人信息)
 git commit -m <提交信息>    #提交暂存区到仓库
 ```
 
