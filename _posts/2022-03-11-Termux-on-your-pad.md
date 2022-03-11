@@ -13,7 +13,11 @@ keywords: Linux, Termux
 
 ## 运行在安卓系统上的Linux系统——Termux基础界面
 
-Termux软件首次打开后，看到的便是黑底白字的标配代码界面。这是基于安卓系统的阉割版Linux，但已经包含所有常用的linux命令了，还可以编辑启动时代码，设置快捷命令等linux基础操作。
+Termux软件首次打开后，看到的便是黑底白字的标配代码界面。
+
+![](/img/termux/1646976019262_012141.jpg)
+
+这是基于安卓系统的阉割版Linux，但已经包含所有常用的linux命令了，还可以编辑启动时代码，设置快捷命令等linux基础操作。
 
 *第一次进入时记得输入`pkg update`或`pkg upgrade`来更新软件包。*
 
@@ -21,13 +25,15 @@ Termux软件首次打开后，看到的便是黑底白字的标配代码界面�
 
 不仅如此，还可以使用命令`termux-setup-storage`来实现对本地安卓文件的访问。
 
-*不过出于安全原因不建议这么做*
+*但这样会涉及到数据安全，三思而后行！*
 
 ## 利用Proot体验完整的linux系统并搭建Code Server实现可视化编程环境
 
 然而光这些还无法满足我的需求，后来了解到一个神奇的软件包proot-distro，通过`pkg install proot-distro`便可安装这个软件包。
 
 凭借这个软件包，便可安装Arch linux、Debian、Ubuntu等主流linux系统了。
+
+![](/img/termux/screenshot.jpg)
 
 在Github上有个项目Code Server，该项目旨于实现基于微软Visual Studio Code的远程调试功能。在Release栏里可以找到已经编译好的deb和rpm安装包，通过本地下载或者linux上的wget下载下来安装后，便可用命令`code-server`启动服务器。
 
@@ -40,11 +46,15 @@ Termux软件首次打开后，看到的便是黑底白字的标配代码界面�
 *这个地址:端口号*
  进入Code Server界面了。
 
+![](/img/termux/1646975979473_012121.jpg)
+
 另外本机可以通过
 *127.0.0.1:端口号*
 来进入，这样即使没有连接网络也可以使用Code Server。
 
 随后在插件栏搜索安装Code Runner插件，就可以顺利编译运行代码文件了。
+
+![](img/termux/1646975979460_012055.jpg)
 
 但是Code Server还是有局限的，那就是没有cppdbg插件支持，因而无法对C语言进行调试（也可能是我的技术不够）
 
@@ -64,6 +74,8 @@ Termux软件首次打开后，看到的便是黑底白字的标配代码界面�
 *localhost:端口号*
 ，便可实现远程连接。
 
+![](/img/termux/1646975979432_011946.jpg)
+
 这样就能进入图形化桌面环境了。
 
 ## 硬解的桌面环境
@@ -76,9 +88,13 @@ Termux软件首次打开后，看到的便是黑底白字的标配代码界面�
 
 这时只能另辟蹊径，在Google Play上找到了一个名为AndroNix的第三方app，这个app给予了多达8种linux系统，每种系统都可以自由选择Xfce、Lxde、LxQt三种桌面环境，随后直接复制脚本自动安装。
 
+![](/img/termux/1646975979451_012034.jpg)
+
 还好这些脚本是自带wayland显示服务器解决方案的，但Termux-X11是无法接收显示信号的，还得用VNC Viewer接收。
 
 ## 结尾
 
 就这样经过一番折腾，Termux终于被我调教成了对我来说比较完美的状态，但我相信这并不是Termux的极限。相信之后我的技术水平提升到一定水准后，能够让这强大的app发挥更大的潜能。
+
+![](/img/termux/1646975979442_012007.jpg)
 
