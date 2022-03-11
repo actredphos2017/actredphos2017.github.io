@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Termux －－ 属于代码人的生产力工具
+title: Termux： 属于代码人的生产力工具
 categories: [Termux]
 description: 本文将书写本人最近这段时间接触Termux的经历以及搭建教程
 keywords: Linux, Termux
