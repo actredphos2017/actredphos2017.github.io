@@ -8,4 +8,4 @@
 
 如有异议敬请指正O(∩_∩)O
 
-十分感谢[小马哥](https://github.com/mercyblitz/mercyblitz.github.io)提供的博客模板！
+十分感谢[小马哥](https://github.com/mercyblitz)大佬提供的如此精美的[博客模板](https://github.com/mercyblitz/mercyblitz.github.io)！
