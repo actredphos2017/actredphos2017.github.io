@@ -86,5 +86,4 @@ git checkout <分支名称>
 git merge <分支名称>
 #删除分支
 git branch -D <分支名称>
-
 ```
