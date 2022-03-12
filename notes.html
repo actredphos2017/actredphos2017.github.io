@@ -5,27 +5,27 @@ author: Actredphos2017
 description: "在这里，一起Update自己"
 ---
 
-{% for post in paginator.notes %}
-<div class="post-preview">
-    <a href="{{ post.url | prepend: site.baseurl }}">
-        <h2 class="post-title">
-            {{ post.title }}
+{% for notes in paginator.notes %}
+<div class="notes-preview">
+    <a href="{{ notes.url | prepend: site.baseurl }}">
+        <h2 class="notes-title">
+            {{ notes.title }}
         </h2>
-        {% if post.subtitle %}
-        <h3 class="post-subtitle">
-            {{ post.subtitle }}
+        {% if notes.subtitle %}
+        <h3 class="notes-subtitle">
+            {{ notes.subtitle }}
         </h3>
         {% endif %}
-        <div class="post-content-preview">
-            {% if post.lang == 'en' %}
-                {{ post.content | strip_html | truncate:300 }}
+        <div class="notes-content-preview">
+            {% if notes.lang == 'en' %}
+                {{ notes.content | strip_html | truncate:300 }}
             {% else %}
-                {{ post.content | strip_html | truncate:200 }}
+                {{ notes.content | strip_html | truncate:200 }}
             {% endif %}
         </div>
     </a>
-    <p class="post-meta">
-        Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
+    <p class="notes-meta">
+        notesed by {% if notes.author %}{{ notes.author }}{% else %}{{ site.title }}{% endif %} on {{ notes.date | date: "%B %-d, %Y" }}
     </p>
 </div>
 <hr>
@@ -36,12 +36,12 @@ description: "在这里，一起Update自己"
 <ul class="pager">
     {% if paginator.previous_page %}
     <li class="previous">
-        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
+        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer notess</a>
     </li>
     {% endif %}
     {% if paginator.next_page %}
     <li class="next">
-        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
+        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older notess &rarr;</a>
     </li>
     {% endif %}
 </ul>
