@@ -117,9 +117,9 @@ PROJECT (HELLO C CXX)      指定了工程的名字，并且支持语言是C和C
 
 该指定隐式定义了两个CMAKE的变量
 
-<projectname>_BINARY_DIR，本例中是 HELLO_BINARY_DIR
+【projectname】_BINARY_DIR，本例中是 HELLO_BINARY_DIR
 
-<projectname>_SOURCE_DIR，本例中是 HELLO_SOURCE_DIR
+【projectname】_SOURCE_DIR，本例中是 HELLO_SOURCE_DIR
 
 MESSAGE关键字就可以直接使用者两个变量，当前都指向当前的工作目录，后面会讲外部编译
 
@@ -306,7 +306,7 @@ DESTINATION：
 
 1、写绝对路径
 
-2、可以写相对路径，相对路径实际路径是：${CMAKE_INSTALL_PREFIX}/<DESTINATION 定义的路径>
+2、可以写相对路径，相对路径实际路径是：${CMAKE_INSTALL_PREFIX}/【DESTINATION 定义的路径】
 
 CMAKE_INSTALL_PREFIX  默认是在 /usr/local/
 
@@ -467,9 +467,9 @@ VERSION 指代动态库版本，SOVERSION 指代 API 版本。
 
 ### 安装共享库和头文件
 
-本例中我们将 hello 的共享库安装到<prefix>/lib目录，
+本例中我们将 hello 的共享库安装到【prefix】/lib目录，
 
-将 hello.h 安装到<prefix>/include/hello 目录
+将 hello.h 安装到【prefix】/include/hello 目录
 
 ```cpp
 //文件放到该目录下
@@ -512,7 +512,7 @@ int main(){
 
 ### 解决：make后头文件找不到的问题
 
-PS：include <hello/hello.h>  这样include是可以，这么做的话，就没啥好讲的了
+PS：include 【hello/hello.h】  这样include是可以，这么做的话，就没啥好讲的了
 
 关键字：INCLUDE_DIRECTORIES    这条指令可以用来向工程添加多个特定的头文件搜索路径，路径之间用空格分割
 
