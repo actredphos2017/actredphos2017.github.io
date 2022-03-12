@@ -2,7 +2,7 @@
 layout: post
 title: 看上Github，吃定Github
 categories: [Git]
-description: 学习Git基础命令，并使用Github来同步项目与共享协同
+description: 学习Git常用的基础命令
 keywords: Git,Github
 ---
 
@@ -65,37 +65,3 @@ Github是一个开放的Git服务器，普通用户都可以凭借邮箱在[Gith
 进入任意一个项目页，点击右上角的Code，获取git地址，随后在任意位置输入`git clone <git地址>`便可把仓库获取到本地。
 
 *注意：点击Download Zip只会把项目文件获取下来，并不会获取.git文件夹，因此获取到的并不是一个完整的仓库*
-
-若原本的项目发生了更改，到原来设备后需要用`git pull`将仓库与云端同步才能进行操作。
-
-## Git回滚与项目撤回
-
-如果有时出于某些原因不得不将项目回滚或撤回，这也是git的核心能力。
-
-每一次提交(Commit)都会被git获取到，通过`git checkout`回滚到本仓库的上一次Commit。
-
-也可以用`git checkout <文件地址>`将单个文件回滚到上一次Commit。
-
-但如果回滚到上一次Commit还不够，就需要`git reset HEAD^`将仓库恢复到再上一次Commit的状态，这时再`git checkout <文件地址>`就可以把文件回滚到更早的状态。
-
-但要当心此时若`git checkout`可能会让整个项目回滚到更早的状态。
-
-项目回滚后，上传至云端可能会显示冲突，如果你想把自己的项目原封不动的上传上去，就需要`git push -f`强制上传。
-
-也可以用`git branch <分支名>`新建一个分支，Commit后用`git push -u origin <分支名> -f`上传。
-
-## 仓库分支操作、合并分支与处理冲突
-
-多人协作时，需要每个人创建个人分支，完成工作后再合并至主分支，这样才能让协作过程有序而高效。
-
-```sh
-git branch    #获取分区列表(带*的为目前所在分支)
-
-git branch <分支名称>    #添加分支
-
-git checkout <分支名称>    #单纯切换到某个分支
-
-git merge <分支名称>    #合并分支
-
-git branch -D <分支名称>    #删除分支
-```
