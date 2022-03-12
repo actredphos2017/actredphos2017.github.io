@@ -1,6 +1,6 @@
 ---
 layout: note
-title: [短记]修改VS Code的默认终端
+title: 【短记】修改VS Code的默认终端
 categories: [Note]
 keywords: vscode
 ---
