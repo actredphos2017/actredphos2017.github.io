@@ -1,10 +1,26 @@
 ---
 layout: post
-title: Github特殊情况常用解决方案
+title: Git详细解释
 categories: [Git]
 description: 处理使用Git时遇到的特殊问题时的常用命令
 keywords: Git,Github
 ---
+
+## Git仓库处理命令可视化说明
+
+仓库处理常用命令
+```sh
+git clone       #克隆远程仓库到本地
+git pull        #从远程拉取项目到本地仓库和工作台
+git fetch       #从远程拉取项目到本地仓库
+git push        #将本地仓库上传至远程
+git commit      #将暂存区更改提交到仓库
+git checkout    #将仓库下载到工作台
+git reset       #获取上一个Commit仓库
+```
+
+![一图看懂Git仓库处理命令](/img/assets/Git/onepic_git.png)
+
 
 ## 仓库分支操作、合并分支与处理冲突
 
@@ -34,10 +50,6 @@ git branch -D <分支名称>    #删除分支
 
 但要当心此时若`git checkout`可能会让整个项目回滚到更早的状态。
 
-项目回滚后，上传至云端可能会显示冲突，如果你想把自己的项目原封不动的上传上去，就需要`git push -f`强制上传。
-
-也可以用`git branch <分支名>`新建一个分支，Commit后用`git push -u origin <分支名> -f`上传，交由其他项目成员合并。
-
 ## 多设备协同时冲突问题解决方案
 
 在从Github上拉取单个分支到多台设备上时，若项目发生了更改，其他设备需要用`git fetch`将仓库与云端同步才能进行Commit。
@@ -54,6 +66,10 @@ git reset --hard origin/master
 git pull
 ```
 
-## git fetch 与 git pull 的区别
+本地项目回滚后，若其他成员上传后，本地再上传至云端可能会显示冲突。
 
-`git fetch`把云端
+可以用`git branch <分支名>`新建一个分支，Commit后用`git push -u origin <分支名>`上传，交由其他项目成员合并。
+
+或者先`git merge origin/master`在本地合并后再`git push`。
+
+如果你想把自己目前的本地项目原封不动的上传上去，就需要`git push -u origin <分支名> -f`强制上传。
