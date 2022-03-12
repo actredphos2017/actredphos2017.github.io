@@ -61,10 +61,10 @@ kramdown:
 
 
 # Disqus settings
-disqus_username: ARP2017
+# disqus_username: ARP2017
 
 # Netease settings
-netease_comment: false
+netease_comment: true
 
 
 
