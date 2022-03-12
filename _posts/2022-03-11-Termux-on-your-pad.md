@@ -19,7 +19,7 @@ Termux软件首次打开后，看到的便是黑底白字的标配代码界面�
 
 这是基于安卓系统的阉割版Linux，但已经包含所有常用的linux命令了，还可以编辑启动时代码，设置快捷命令等linux基础操作。
 
-*第一次进入时记得输入`pkg update`或`pkg upgrade`来更新软件包。*
+*第一次进入时记得输入`pkg update`或`apt update`来更新软件包。*
 
 另外，我们还可以通过pkg或者apt命令来安装一些基础软件包，不论是文本编辑器vim、nano，编译器clang、python3，下载工具wget、curl、git，都包含在Termux自带的源里。
 
