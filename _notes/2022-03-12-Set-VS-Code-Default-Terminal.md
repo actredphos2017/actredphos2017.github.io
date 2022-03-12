@@ -1,5 +1,5 @@
 ---
-layout: notes
+layout: note
 title: 修改VS Code的默认终端
 keywords: vscode
 ---
