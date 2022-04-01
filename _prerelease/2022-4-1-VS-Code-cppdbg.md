@@ -47,43 +47,23 @@ C语言编译环境配置文件(无法设置编译器环境变量时才需使用
 
 launch.json便是调试配置文件了
 右下角默认添加的配置为单个程序配置文件
-
-{
-   "version": "0.2.0",
-   "configurations": [
-       {
-           "name": "C++ 启动 (GDB)", //调试配置名称
-           "type": "cppdbg", //调试类型 cppdbg 为 C++ Debug
-           "request": "launch",
-           "targetArchitecture": "x86",
-           "program": "${workspaceRoot}\\${fileBasename}.exe", //运行调试程序目录 {workspaceRoot}为文件根目录 {fileBasename}为文件无后缀名称
-           "miDebuggerPath":"gdb", //调试命令
-           "args": [], //命令附加参数
-           "stopAtEntry": false,
-           "cwd": "${workspaceRoot}", //命令行运行环境
-           "externalConsole": true, //是否在外部运行
-           "preLaunchTask": "compile" //调试前任务(详细见.vscode/tasks.json)
-           }
-   ]
-}
-
 {
     
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "(gdb) 启动",
-            "preLaunchTask": "C/C++: g++.exe 生成活动文件",
-            "type": "cppdbg",
+            "name": "(gdb) 启动", //调试配置名称
+            "preLaunchTask": "C/C++: g++.exe 生成活动文件", //调试前任务 需与tasks的label参数相匹配
+            "type": "cppdbg", // c++ debug 调试类型，c/c++插件已包含
             "request": "launch",
-            "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
-            "args": [],
+            "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",  //程序位置 {fileDirname} 为文件所在目录 {fileBasenameNoExtension} 为文件无后缀名名称
+            "args": [], //附加参数
             "stopAtEntry": false,
-            "cwd": "${fileDirname}",
+            "cwd": "${fileDirname}", //命令行运行环境
             "environment": [],
-            "externalConsole": true,
+            "externalConsole": true, //是否在外部终端运行
             "MIMode": "gdb",
-            "miDebuggerPath": "gdb",
+            "miDebuggerPath": "gdb", 
             "setupCommands": [
                 {
                     "description": "为 gdb 启用整齐打印",
@@ -112,43 +92,14 @@ launch.json便是调试配置文件了
     "tasks": [
         {
             "type": "shell",
-            "label": "compile",
+            "label": "C/C++: g++.exe 生成活动文件", //调试名称，该名称需与launch.json一致
             "command": "g++", //命令
             "args": [
                 "-g",
                 "${file}",
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
-            ], //命令附加参数
-            "problemMatcher": [
-                "$gcc"
-            ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            }
-        }
-    ]
-}
-
-{
-    // See https://go.microsoft.com/fwlink/?LinkId=733558 
-    // for the documentation about the tasks.json format
-    "version": "2.0.0",
-    "tasks": [
-        {
-            "type": "shell",
-            "label": "C/C++: g++.exe 生成活动文件",
-            "command": "C:\\Program Files\\mingw-w64\\x86_64-8.1.0-posix-sjlj-rt_v6-rev0\\mingw64\\bin\\g++.exe",
-            "args": [
-                "-g",
-                "${file}",
-                "-o",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe"
-            ],
-            "options": {
-                "cwd": "C:\\Program Files\\mingw-w64\\x86_64-8.1.0-posix-sjlj-rt_v6-rev0\\mingw64\\bin"
-            },
+            ], //参数
             "problemMatcher": [
                 "$gcc"
             ],
@@ -169,7 +120,8 @@ C++编译命令行环境配置
 下面的配置范例是以MinGW根目录为
 D:/Program Files/mingw-w64/x86_64-8.1.0-win32-seh-rt_v6-rev0/
 的前提下编写的
-
+如果MinGW与该目录不同，需要把 D:/Program Files/mingw-w64/x86_64-8.1.0-win32-seh-rt_v6-rev0/ 更换成自己的目录
+(通过 Ctrl + F 调用搜索工具可以快速替换)
 
 c_cpp_properties.json
 
