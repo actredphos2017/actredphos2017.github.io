@@ -67,6 +67,40 @@ launch.json便是调试配置文件了
    ]
 }
 
+{
+    
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "(gdb) 启动",
+            "preLaunchTask": "C/C++: g++.exe 生成活动文件",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "miDebuggerPath": "gdb",
+            "setupCommands": [
+                {
+                    "description": "为 gdb 启用整齐打印",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description":  "将反汇编风格设置为 Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+        
+    ]
+}
+
 然而launch.json只负责调试文件，并不接管编译任务
 通过可以通过里面的 "preLaunchTask" 参数来设置调试前任务
 刚好可以用这个任务设置编译任务
@@ -93,6 +127,36 @@ launch.json便是调试配置文件了
                 "kind": "build",
                 "isDefault": true
             }
+        }
+    ]
+}
+
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558 
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "C/C++: g++.exe 生成活动文件",
+            "command": "C:\\Program Files\\mingw-w64\\x86_64-8.1.0-posix-sjlj-rt_v6-rev0\\mingw64\\bin\\g++.exe",
+            "args": [
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "C:\\Program Files\\mingw-w64\\x86_64-8.1.0-posix-sjlj-rt_v6-rev0\\mingw64\\bin"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "调试器生成的任务。"
         }
     ]
 }
