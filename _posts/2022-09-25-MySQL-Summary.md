@@ -1,6 +1,6 @@
 ---
 layout: post
-title: MySQL DDL总结
+title: MySQL 总结
 categories: [MySQL]
 description: some word here
 keywords: MySQL
