@@ -9,6 +9,7 @@ keywords: MySQL
 ## DDL 总结
 
 ```sql
+mysql> STATUS; --服务器信息
 mysql> SHOW DATABASES; --查询所有数据库
 mysql> SELECT DATABASE(); --查询当前数据库
 mysql> CREATE DATABASE (IF NOT EXISTS) [数据库名] (DEFAULT CHARSET [字符集]) (COLLATE [排序规则]); --创建数据库
